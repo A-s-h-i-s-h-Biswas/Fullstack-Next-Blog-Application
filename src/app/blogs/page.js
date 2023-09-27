@@ -3,6 +3,18 @@ import BlogHeader from "@/Components/Blogs/BlogHeader";
 import { getAllPosts } from "@/Utils/data";
 import React from "react";
 
+
+// or Dynamic metadata
+export async function generateMetadata({ searchParams }) {
+  const {type}=searchParams;
+  const postTitle= type === "all"? "Best Blogs ever" : `Best Blogs on ${type}`;
+
+  return {
+    title: postTitle,
+    description: "Best blogs ever, Top blogs, Top 10 blogs",
+  }
+}
+
 const Blog = async ({searchParams}) => {
   const {type}=searchParams;
   const allposts = await getAllPosts(type);

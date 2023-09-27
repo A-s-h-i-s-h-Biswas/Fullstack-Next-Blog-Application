@@ -109,7 +109,7 @@ const WritePost = () => {
           type="text"
           required
           placeholder="Title"
-          className="h-[45px] w-[100%] max-w-[600px]  font-bold dark:text-white text-[40px] dark:bg-slate-800 pl-3 pr-5 outline-none"
+          className="h-[45px] w-[100%] max-w-[600px]  font-bold dark:text-white text-[40px] dark:bg-slate-950 pl-3 pr-5 outline-none"
           onChange={(e) => setTitle(e.target.value)}
         />
       </div>
@@ -117,7 +117,7 @@ const WritePost = () => {
       <div className="flex items-center  justify-center mt-10 w-[100%] ">
         <select
         required
-          className="w-[100%] max-w-[600px] outline-none font-bold opacity-80 dark:text-white dark:bg-slate-800 pl-3"
+          className="w-[100%] max-w-[600px] outline-none font-bold opacity-80 dark:text-white dark:bg-slate-950 pl-3"
           onChange={(e) => setCatSlug(e.target.value)}
         >
           <option value="Coding">Coding</option>

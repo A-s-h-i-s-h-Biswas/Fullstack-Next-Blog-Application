@@ -4,6 +4,18 @@ import BlogHeader from "@/Components/Blogs/BlogHeader";
 import { getDate, getSinglePost, getUser } from "@/Utils/data";
 import Image from "next/image";
 import React from "react";
+
+// or Dynamic metadata
+export async function generateMetadata({ params }) {
+  const { id } = params;
+  const post = await getSinglePost(id);
+  return {
+    title: post.title,
+    description: post.desc,
+  }
+}
+
+
 const SingleBlog = async ({ params }) => {
   const { id } = params;
   console.log(id);
