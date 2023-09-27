@@ -13,7 +13,7 @@ const CommentCard = async({email, time, text }) => {
           className="w-[35px] h-[35px] rounded-full border-[2px] border-white object-cover"
           width={35}
           height={35}
-          alt=""
+          alt="User"
         />
         <p className="pl-2 font-semibold opacity-80">{user.name}</p>
         <p className="pl-3 text-[14px] font-semibold opacity-60">{date}</p>
