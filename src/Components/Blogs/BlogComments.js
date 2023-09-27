@@ -39,6 +39,7 @@ const BlogComments = async({id}) => {
         <p className="font-bold text-[20px] dark:text-white mb-1 text-left">Comments</p>
       {comments?.map((itm) => (
         <CommentCard
+          key={itm.id}
           email={itm.userEmail}
           time={itm.createdAt}
           text={itm.comment}
