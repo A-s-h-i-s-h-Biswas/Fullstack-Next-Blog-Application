@@ -4,17 +4,17 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 const ThemeToggler = () => {
     const getTheme=()=>{
-        return localStorage.getItem("theme") || "light";
+        return window !== undefined ?localStorage.getItem("theme") || "light" : null;
     }
     const [theme, setTheme]=useState(getTheme());
     const toggleTheme=()=>{
         const newTheme=theme === "light" ? "dark" : "light";
-        localStorage.setItem("theme",newTheme);
+        window && localStorage.setItem("theme",newTheme);
         if(newTheme === "dark"){
-            document.documentElement.classList.add("dark");
+            document?.documentElement.classList.add("dark");
         }
         else{
-            document.documentElement.classList.remove("dark");
+            document?.documentElement.classList.remove("dark");
         }
         setTheme(newTheme);
     }
@@ -24,9 +24,9 @@ const ThemeToggler = () => {
         // console.log(newTheme);
         // document.documentElement.classList.toggle("dark",newTheme);
         if(newTheme==="light"){
-            document.documentElement.classList.remove("dark");
+            document?.documentElement.classList.remove("dark");
         }
-        else document.documentElement.classList.add("dark");
+        else document?.documentElement.classList.add("dark");
     },[]);
 
   return (

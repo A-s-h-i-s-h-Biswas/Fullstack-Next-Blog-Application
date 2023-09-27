@@ -9,8 +9,8 @@ import AuthLinks from "./AuthLinks";
 const MenuBar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuHandler = () => {
-    if(!openMenu)document.body.style.overflow="hidden";
-    else document.body.style.overflow="unset";
+    if(!openMenu)document?.body.style.overflow="hidden";
+    else document?.body.style.overflow="unset";
     setOpenMenu((prev) => !prev);
   };
   return (
