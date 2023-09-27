@@ -4,12 +4,12 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 const ThemeToggler = () => {
     const getTheme=()=>{
-        return window !== undefined ?localStorage.getItem("theme") || "light" : null;
+        return localStorage !== undefined ?localStorage.getItem("theme") || "light" : null;
     }
     const [theme, setTheme]=useState(getTheme());
     const toggleTheme=()=>{
         const newTheme=theme === "light" ? "dark" : "light";
-        window && localStorage.setItem("theme",newTheme);
+        localStorage && localStorage.setItem("theme",newTheme);
         if(newTheme === "dark"){
             document?.documentElement.classList.add("dark");
         }
